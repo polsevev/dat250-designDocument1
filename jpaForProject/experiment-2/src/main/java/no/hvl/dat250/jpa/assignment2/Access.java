@@ -15,26 +15,26 @@ public class Access {
             name = "user_access",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "access_id"))
-    private Collection<User> users;
+    private Collection<EndUser> endUsers;
 
     @ManyToOne
     private Poll poll;
 
     public Access() {
-        users = new ArrayList<>();
+        endUsers = new ArrayList<>();
     }
 
-    public void addUser(User user){
-        users.add(user);
+    public void addUser(EndUser endUser){
+        endUsers.add(endUser);
     }
 
     public void setPoll(Poll poll){
         this.poll = poll;
     }
 
-    public Collection<User> getUsers() {
+    public Collection<EndUser> getUsers() {
         // TODO: implement method!
-        return users;
+        return endUsers;
     }
 
 }

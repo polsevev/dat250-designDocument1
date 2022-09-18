@@ -8,13 +8,13 @@
         <class>no.hvl.dat250.jpa.assignment2.Answer</class>
         <class>no.hvl.dat250.jpa.assignment2.Poll</class>
         <class>no.hvl.dat250.jpa.assignment2.Question</class>
-        <class>no.hvl.dat250.jpa.assignment2.User</class>
+        <class>no.hvl.dat250.jpa.assignment2.EndUser</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:derby:./db/mercuryPollDb;create=true"/>
-            <property name="javax.persistence.jdbc.user" value="test"/>
+            <property name="javax.persistence.jdbc.endUser" value="test"/>
             <property name="javax.persistence.jdbc.password" value="test"/>
 
             <property name="eclipselink.ddl-generation" value="create-tables"/>

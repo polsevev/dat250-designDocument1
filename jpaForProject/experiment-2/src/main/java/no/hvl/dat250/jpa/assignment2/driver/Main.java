@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.ArrayList;
 
 public class Main {
     public static final String PERSISTENCE_UNIT_NAME = "mercuryPollDb";
@@ -18,13 +17,13 @@ public class Main {
         // TODO: Persist object world corresponding to the domain model of experiment 2.
 
         EntityTransaction tx = em.getTransaction();
-        User user = new User();
+        EndUser endUser = new EndUser();
         Poll poll = new Poll();
         Question question = new Question();
         Answer answer = new Answer();
 
         answer.setAnswer(true);
-        answer.setUser(user);
+        answer.setUser(endUser);
         answer.setQuestion(question);
 
 
@@ -38,17 +37,17 @@ public class Main {
 
         poll.setPollName("ChickenPoll");
         poll.addQuestion(question);
-        poll.setUser(user);
+        poll.setUser(endUser);
 
-        user.addPollOwned(poll);
-        user.addPollAccess(poll);
-        user.setUserName("Cesiuss");
-        user.setPassword("Password");
+        endUser.addPollOwned(poll);
+        endUser.addPollAccess(poll);
+        endUser.setUserName("Cesiuss");
+        endUser.setPassword("Password");
 
 
 
         tx.begin();
-        em.persist(user);
+        em.persist(endUser);
         em.persist(poll);
         em.persist(answer);
         em.persist(question);

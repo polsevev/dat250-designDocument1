@@ -14,16 +14,16 @@ public class Poll {
 
     private Integer questionCount;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User owner;
+    private EndUser owner;
 
     @ManyToMany
     @JoinTable(
             name = "user_access",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "poll_id"))
-    private Collection<User> canAccess;
+    private Collection<EndUser> canAccess;
 
     @OneToMany
     Collection<Question> questions;
@@ -40,7 +40,7 @@ public class Poll {
         this.questions.add(q);
         questionCount++;
     }
-    public void setUser(User owner){
+    public void setUser(EndUser owner){
         this.owner = owner;
     }
     public void setPollName(String pollName) {

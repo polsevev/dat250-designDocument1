@@ -12,7 +12,7 @@ public class Answer {
     private boolean answer;
 
     @OneToOne
-    private User user;
+    private EndUser endUser;
 
     @ManyToOne
     private Question question;
@@ -25,8 +25,8 @@ public class Answer {
         this.question = question;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(EndUser endUser) {
+        this.endUser = endUser;
     }
 
     public Long getId() {
@@ -37,8 +37,8 @@ public class Answer {
         return question;
     }
 
-    public User getUser() {
-        return user;
+    public EndUser getUser() {
+        return endUser;
     }
     public boolean getAnswer(){
         return this.answer;

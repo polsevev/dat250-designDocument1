@@ -43,7 +43,7 @@ public class MainTest {
 
         // Test address
         assertThat(person.getAddresses().size(), is(1));
-        User address = person.getAddresses().iterator().next();
+        EndUser address = person.getAddresses().iterator().next();
 
         assertThat(address.getStreet(), is("Inndalsveien"));
         assertThat(address.getNumber(), is(28));

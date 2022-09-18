@@ -1,79 +1,13 @@
-Fri Sep 16 11:51:26 UTC 2022 Thread[RMI TCP Connection(2)-127.0.0.1,5,RMI Runtime] Cleanup action starting
-java.sql.SQLException: Database '/home/rolfmg/Coding/dat250/dat250-lab1/jpaForProject/experiment-2/db/experiment2' not found.
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
-	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3215)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(EmbedConnection.java:772)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:442)
-	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:660)
-	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:656)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:654)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:300)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:967)
-	at org.apache.derby.jdbc.EmbeddedDriver.connect(EmbeddedDriver.java:125)
-	at com.intellij.database.remote.jdbc.helpers.JdbcHelperImpl.connect(JdbcHelperImpl.java:642)
-	at com.intellij.database.remote.jdbc.impl.RemoteDriverImpl.connect(RemoteDriverImpl.java:63)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: ERROR XJ004: Database '/home/rolfmg/Coding/dat250/dat250-lab1/jpaForProject/experiment-2/db/experiment2' not found.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
-	... 32 more
-============= begin nested exception, level (1) ===========
-ERROR XJ004: Database '/home/rolfmg/Coding/dat250/dat250-lab1/jpaForProject/experiment-2/db/experiment2' not found.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
-	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3215)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(EmbedConnection.java:772)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:442)
-	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:660)
-	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:656)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:654)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:300)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:967)
-	at org.apache.derby.jdbc.EmbeddedDriver.connect(EmbeddedDriver.java:125)
-	at com.intellij.database.remote.jdbc.helpers.JdbcHelperImpl.connect(JdbcHelperImpl.java:642)
-	at com.intellij.database.remote.jdbc.impl.RemoteDriverImpl.connect(RemoteDriverImpl.java:63)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-============= end nested exception, level (1) ===========
-Cleanup action completed
+----------------------------------------------------------------
+Sun Sep 18 16:33:37 UTC 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0183-5172-bb59-000007700000 
+on database directory /home/rolf/Coding/dat250-designDocument1/jpaForProject/db/mercuryPollDb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@67424e82 
+Loaded from file:/home/rolf/.config/JetBrains/IntelliJIdea2022.2/jdbc-drivers/Apache%20Derby/10.15.2.0/derby-10.15.2.0.jar
+java.vendor=JetBrains s.r.o.
+java.runtime.version=17.0.4+7-b469.53
+user.dir=/home/rolf/Coding/dat250-designDocument1/jpaForProject
+os.name=Linux
+os.arch=amd64
+os.version=5.19.9-arch1-1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

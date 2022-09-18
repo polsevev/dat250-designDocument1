@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class User {
+@Entity
+public class EndUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,9 +20,11 @@ public class User {
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "canAccess")
     private Collection<Poll> pollsAccessable;
+
+    @OneToMany
     private Collection<Answer> answers;
 
-    public User(){
+    public EndUser(){
         this.pollsOwned = new ArrayList<>();
         this.pollsAccessable = new ArrayList<>();
         this.answers = new ArrayList<>();

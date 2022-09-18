@@ -5,7 +5,7 @@ on database directory /home/rolfmg/Coding/dat250/dat250-jpa-example/eclipselink/
 Loaded from file:/home/rolfmg/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=N/A
 java.runtime.version=18.0.2+9
-user.dir=/home/rolfmg/Coding/dat250/dat250-jpa-example/eclipselink/experiment-2
+endUser.dir=/home/rolfmg/Coding/dat250/dat250-jpa-example/eclipselink/experiment-2
 os.name=Linux
 os.arch=amd64
 os.version=5.10.136-1-MANJARO

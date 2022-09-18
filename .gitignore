@@ -1,5 +1,4 @@
-
-
+# ignore all .dat files
 *.dat
-
-jpaForProject/db/
+# Ignore all DB files
+jpaForProject/db/*
