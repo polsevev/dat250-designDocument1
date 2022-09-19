@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Sep 19 09:33:36 UTC 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0183-5518-8e44-000007706038 
+Mon Sep 19 09:46:04 UTC 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0183-5523-f858-000007706038 
 on database directory /home/rolfmg/Coding/dat250/dat250-designDocument1/jpaForProject/db/mercuryPollDb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@67424e82 
 Loaded from file:/home/rolfmg/.config/JetBrains/IntelliJIdea2022.2/jdbc-drivers/Apache%20Derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=JetBrains s.r.o.

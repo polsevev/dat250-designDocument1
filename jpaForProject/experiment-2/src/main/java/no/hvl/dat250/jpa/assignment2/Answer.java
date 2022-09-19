@@ -15,8 +15,8 @@ public class Answer {
     @JoinColumn(name="endUser_id")
     private EndUser endUser;
 
-    @ManyToOne
-    @JoinColumn(name="answer_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="question_id")
     private Question question;
 
     public void setAnswer(boolean answer) {
