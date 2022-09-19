@@ -12,7 +12,6 @@ public class Poll {
 
     private String pollName;
 
-    private Integer questionCount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -31,14 +30,12 @@ public class Poll {
     public Poll(){
 
         this.questions = new ArrayList<>();
-        questionCount = 0;
     }
 
 
 
     public void addQuestion(Question q){
         this.questions.add(q);
-        questionCount++;
     }
     public void setUser(EndUser owner){
         this.owner = owner;
@@ -55,12 +52,7 @@ public class Poll {
 
         return this.pollName;
     }
-
-    public int getQuestionCount() {
-
-        return this.questionCount;
-    }
-
+    
 
     public Collection<Question> getQuestions(){
         return this.questions;
