@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className="header">
       <h1 className="header-title">
-        <Link to="/">Mercury Polls</Link>
+        <Link to="/">DAT250 Polls</Link>
       </h1>
       <a href="/logout" className="logout_button">
         Logout

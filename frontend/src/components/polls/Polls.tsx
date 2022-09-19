@@ -1,9 +1,9 @@
 import "./Polls.css";
 
 const polls = [
-  { question: "Do you like rust?" },
-  { question: "Ananas on pizza?" },
-  { question: "Big?" },
+  { question: "Do you like polls?" },
+  { question: "Pineapple on pizza?" },
+  { question: "JPA better than Hibernate?" },
 ];
 
 const Polls = () => {
