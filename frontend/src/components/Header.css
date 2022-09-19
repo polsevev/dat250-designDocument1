@@ -13,6 +13,9 @@
   color: black;
   font-size: 3rem;
 }
+.header-title > a {
+  color: black;
+}
 
 .logout_button {
   width: 5rem;

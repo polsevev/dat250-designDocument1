@@ -8,10 +8,10 @@ const polls = [
 
 const Polls = () => {
   return (
-    <div>
+    <div className="container">
       <ul className="polls-list">
-        {polls.map((poll) => (
-          <li>
+        {polls.map((poll, i) => (
+          <li key={i}>
             <div className="poll-item">{poll.question}</div>
           </li>
         ))}
