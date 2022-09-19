@@ -2,3 +2,4 @@
 *.dat
 # Ignore all DB files
 jpaForProject/db
+*.log

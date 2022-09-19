@@ -4,7 +4,6 @@
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
     <persistence-unit name="mercuryPollDb" transaction-type="RESOURCE_LOCAL">
 
-        <class>no.hvl.dat250.jpa.assignment2.Access</class>
         <class>no.hvl.dat250.jpa.assignment2.Answer</class>
         <class>no.hvl.dat250.jpa.assignment2.Poll</class>
         <class>no.hvl.dat250.jpa.assignment2.Question</class>

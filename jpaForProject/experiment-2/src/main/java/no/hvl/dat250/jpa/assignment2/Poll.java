@@ -25,7 +25,7 @@ public class Poll {
             inverseJoinColumns = @JoinColumn(name = "poll_id"))
     private Collection<EndUser> canAccess;
 
-    @OneToMany
+    @OneToMany(mappedBy = "poll")
     Collection<Question> questions;
 
     public Poll(){

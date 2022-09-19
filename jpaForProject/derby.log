@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Sun Sep 18 16:33:37 UTC 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0183-5172-bb59-000007700000 
-on database directory /home/rolf/Coding/dat250-designDocument1/jpaForProject/db/mercuryPollDb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@67424e82 
-Loaded from file:/home/rolf/.config/JetBrains/IntelliJIdea2022.2/jdbc-drivers/Apache%20Derby/10.15.2.0/derby-10.15.2.0.jar
+Mon Sep 19 09:33:36 UTC 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0183-5518-8e44-000007706038 
+on database directory /home/rolfmg/Coding/dat250/dat250-designDocument1/jpaForProject/db/mercuryPollDb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@67424e82 
+Loaded from file:/home/rolfmg/.config/JetBrains/IntelliJIdea2022.2/jdbc-drivers/Apache%20Derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=JetBrains s.r.o.
-java.runtime.version=17.0.4+7-b469.53
-user.dir=/home/rolf/Coding/dat250-designDocument1/jpaForProject
+java.runtime.version=17.0.3+7-b469.37
+user.dir=/home/rolfmg/Coding/dat250/dat250-designDocument1/jpaForProject
 os.name=Linux
 os.arch=amd64
-os.version=5.19.9-arch1-1
+os.version=5.10.141-1-MANJARO
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

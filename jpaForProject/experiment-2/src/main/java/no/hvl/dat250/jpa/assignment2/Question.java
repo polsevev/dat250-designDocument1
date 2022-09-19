@@ -16,9 +16,10 @@ public class Question {
     private String question;
 
     @ManyToOne
+    @JoinColumn(name = "poll_id")
     private Poll poll;
 
-    @OneToMany
+    @OneToMany(mappedBy = "question")
     private Collection<Answer> answers;
 
     public Question(){

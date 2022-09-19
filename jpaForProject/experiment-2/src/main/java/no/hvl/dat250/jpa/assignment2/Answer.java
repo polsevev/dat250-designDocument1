@@ -11,10 +11,12 @@ public class Answer {
 
     private boolean answer;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="endUser_id")
     private EndUser endUser;
 
     @ManyToOne
+    @JoinColumn(name="answer_id")
     private Question question;
 
     public void setAnswer(boolean answer) {

@@ -21,7 +21,7 @@ public class EndUser {
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "canAccess")
     private Collection<Poll> pollsAccessable;
 
-    @OneToMany
+    @OneToMany(mappedBy = "endUser")
     private Collection<Answer> answers;
 
     public EndUser(){
