@@ -17,6 +17,8 @@ public class Main {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         EntityManager em = factory.createEntityManager();
 
+        PollController.registerRoutes(em);
+
         // TODO: Persist object world corresponding to the domain model of experiment 2.
 
         EntityTransaction tx = em.getTransaction();
@@ -64,8 +66,6 @@ public class Main {
 
         List<EndUser> endusers = endUserDAO.findAll();
         System.out.println(endusers);
-        em.close();
-        factory.close();
 
 
     }
