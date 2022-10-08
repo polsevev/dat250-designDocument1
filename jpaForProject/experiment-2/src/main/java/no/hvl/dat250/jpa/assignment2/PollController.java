@@ -6,6 +6,7 @@ import no.hvl.dat250.jpa.assignment2.DAO.PollDAO;
 import no.hvl.dat250.jpa.assignment2.DAO.QuestionDAO;
 import no.hvl.dat250.jpa.assignment2.dto.AnswerDto;
 import no.hvl.dat250.jpa.assignment2.dto.PollDto;
+import no.hvl.dat250.jpa.assignment2.dto.PutPollDto;
 
 import javax.persistence.EntityManager;
 
@@ -48,7 +49,11 @@ public class PollController {
         });
         put("/poll/:id", (req, res) -> {
             Long id = Long.parseLong(req.params("id"));
-            return "";
+            Poll poll = new PollDAO(em).findOne(id);
+            PutPollDto dto = gson.fromJson(req.body(), PutPollDto.class);
+            poll.setPollName(dto.getPollName());
+            new PollDAO(em).update(poll);
+            return "ok";
         });
         delete("/poll/:id", (req, res) -> {
             Long id = Long.parseLong(req.params("id"));

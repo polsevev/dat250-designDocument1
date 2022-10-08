@@ -14,7 +14,6 @@ public class PollDAO extends DAO<Poll>{
         setClazz(Poll.class );
     }
 
-    @Override
     public void delete( Poll entity ){
         EntityTransaction tx = entityManager.getTransaction();
         tx.begin();

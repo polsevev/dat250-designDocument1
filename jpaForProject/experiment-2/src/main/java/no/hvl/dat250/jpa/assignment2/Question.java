@@ -28,6 +28,10 @@ public class Question implements Serializable {
     public Question(){
         answers = new ArrayList<>();
     }
+    public Question(QuestionDto dto, Poll poll) {
+        this.poll = poll;
+        question = dto.getQuestion();
+    }
 
 
 

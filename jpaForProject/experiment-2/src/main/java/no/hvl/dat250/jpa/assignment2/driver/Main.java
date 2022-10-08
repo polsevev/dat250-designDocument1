@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -18,6 +17,7 @@ public class Main {
         EntityManager em = factory.createEntityManager();
 
         PollController.registerRoutes(em);
+        QuestionController.registerRoutes(em);
 
         // TODO: Persist object world corresponding to the domain model of experiment 2.
 
