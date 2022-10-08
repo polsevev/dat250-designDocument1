@@ -1,9 +1,10 @@
 package no.hvl.dat250.jpa.assignment2;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Answer {
+public class Answer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

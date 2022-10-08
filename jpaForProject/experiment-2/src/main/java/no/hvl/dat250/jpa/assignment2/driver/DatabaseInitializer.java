@@ -5,7 +5,7 @@ import javax.persistence.*;
  * This file contains means to clear the database, if JPA's drop-table actions runs into inconsistencies as shown in the lectures
  */
 public class DatabaseInitializer {
-	private static final String PERSISTENCE_UNIT_NAME = "experiment2";  // Your unit name here, see persistence.xml!!
+	private static final String PERSISTENCE_UNIT_NAME = "mercuryPollDb";  // Your unit name here, see persistence.xml!!
     private static EntityManagerFactory factory;
 	public static void main(String[] args) { 
 		factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -15,9 +15,11 @@ public class DatabaseInitializer {
 // 2. Now make sure to first remove those tables that are not referenced by a foreign key (e.g. join tables) from some other table, afterwards remove all others				
 
 // Example:		
-		em.createNativeQuery("DROP TABLE PERSON_ADDRESS").executeUpdate();
-		em.createNativeQuery("DROP TABLE PERSON").executeUpdate();
-		em.createNativeQuery("DROP TABLE ADDRESS").executeUpdate();
+		em.createNativeQuery("DROP TABLE ANSWER").executeUpdate();
+		em.createNativeQuery("DROP TABLE ENDUSER").executeUpdate();
+		em.createNativeQuery("DROP TABLE POLL").executeUpdate();
+		em.createNativeQuery("DROP TABLE QUESTION").executeUpdate();
+		em.createNativeQuery("DROP TABLE USER_ACCESS").executeUpdate();
 		em.getTransaction().commit();
 		em.close();
 		factory.close();

@@ -1,11 +1,12 @@
 package no.hvl.dat250.jpa.assignment2;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
-public class EndUser {
+public class EndUser implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,6 +1,7 @@
 package no.hvl.dat250.jpa.assignment2.driver;
 
 import no.hvl.dat250.jpa.assignment2.*;
+import no.hvl.dat250.jpa.assignment2.DAO.EndUserDAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -53,6 +54,11 @@ public class Main {
         em.persist(question);
         tx.commit();
 
+        EndUser endUser1 = new EndUser();
+        EndUserDAO endUserDAO = new EndUserDAO(em);
+        tx.begin();
+        endUserDAO.create(endUser1);
+        tx.commit();
 
         em.close();
         factory.close();
