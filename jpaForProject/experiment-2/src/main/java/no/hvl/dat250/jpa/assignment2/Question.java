@@ -1,5 +1,7 @@
 package no.hvl.dat250.jpa.assignment2;
 
+import no.hvl.dat250.jpa.assignment2.dto.QuestionDto;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ public class Question implements Serializable {
     public Question(){
         answers = new ArrayList<>();
     }
+
+
 
     public void setPoll(Poll poll){
         this.poll = poll;

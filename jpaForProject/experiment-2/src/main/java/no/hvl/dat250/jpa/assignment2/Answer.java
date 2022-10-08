@@ -1,5 +1,8 @@
 package no.hvl.dat250.jpa.assignment2;
 
+import no.hvl.dat250.jpa.assignment2.dto.AnswerDto;
+import no.hvl.dat250.jpa.assignment2.dto.QuestionDto;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -19,6 +22,15 @@ public class Answer implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="question_id")
     private Question question;
+
+    public Answer(){
+
+    }
+    public Answer(AnswerDto dto, Question q){
+        this.answer = dto.getAnswer();
+        this.endUser = null;
+        this.question = q;
+    }
 
     public void setAnswer(boolean answer) {
         this.answer = answer;

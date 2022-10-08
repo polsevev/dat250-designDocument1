@@ -1,7 +1,10 @@
 package no.hvl.dat250.jpa.assignment2;
 
 import com.google.gson.Gson;
+import no.hvl.dat250.jpa.assignment2.DAO.AnswerDAO;
 import no.hvl.dat250.jpa.assignment2.DAO.PollDAO;
+import no.hvl.dat250.jpa.assignment2.DAO.QuestionDAO;
+import no.hvl.dat250.jpa.assignment2.dto.AnswerDto;
 import no.hvl.dat250.jpa.assignment2.dto.PollDto;
 
 import javax.persistence.EntityManager;
@@ -48,10 +51,17 @@ public class PollController {
             return "";
         });
         delete("/poll/:id", (req, res) -> {
-            return "";
+            Long id = Long.parseLong(req.params("id"));
+            new PollDAO(em).deleteById(id);
+            return "Successfull delete";
         });
         post("/question/:id/answer", (req, res) -> {
-            return "";
+            Long Qid = Long.parseLong(req.params("id"));
+            Question q = new QuestionDAO(em).findOne(Qid);
+            AnswerDto answerDto = gson.fromJson(req.body(), AnswerDto.class);
+            Answer answer = new Answer(answerDto, q);
+            new AnswerDAO(em).create(answer);
+            return gson.toJson(answerDto);
         });
 
     }

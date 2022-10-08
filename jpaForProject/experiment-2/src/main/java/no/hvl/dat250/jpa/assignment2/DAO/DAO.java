@@ -48,9 +48,10 @@ public abstract class DAO< T extends Serializable> {
     public void deleteById( long entityId ){
         EntityTransaction tx = entityManager.getTransaction();
         T entity = findOne( entityId );
-        tx.begin();
+
         delete( entity );
-        tx.commit();
+
 
     }
+
 }
