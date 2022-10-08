@@ -1,0 +1,4 @@
+./experiment2/db/*
+
+*.log
+.idea
