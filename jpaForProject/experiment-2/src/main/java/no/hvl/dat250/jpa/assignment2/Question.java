@@ -44,7 +44,6 @@ public class Question implements Serializable {
     }
 
     public String getQuestion() {
-        // TODO: implement method!
         return question;
     }
 

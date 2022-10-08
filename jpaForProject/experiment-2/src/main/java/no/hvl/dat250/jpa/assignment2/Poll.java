@@ -1,5 +1,8 @@
 package no.hvl.dat250.jpa.assignment2;
 
+import no.hvl.dat250.jpa.assignment2.dto.PollDto;
+import no.hvl.dat250.jpa.assignment2.dto.QuestionDto;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,12 +28,22 @@ public class Poll implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "poll_id"))
     private Collection<EndUser> canAccess;
 
-    @OneToMany(mappedBy = "poll")
+    @OneToMany(mappedBy = "poll", cascade = CascadeType.PERSIST)
     Collection<Question> questions;
 
     public Poll(){
-
         this.questions = new ArrayList<>();
+    }
+    public Poll(PollDto pollDto) {
+        pollName = pollDto.getPollName();
+        owner = null; // TODO: add users
+        this.questions = new ArrayList<>();
+        for (QuestionDto questionDto : pollDto.getQuestions()) {
+            Question question = new Question();
+            question.setQuestion(questionDto.getQuestion());
+            question.setPoll(this);
+            addQuestion(question);
+        }
     }
 
 
