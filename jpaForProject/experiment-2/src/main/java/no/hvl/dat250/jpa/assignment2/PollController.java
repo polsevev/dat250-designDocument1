@@ -10,6 +10,7 @@ import no.hvl.dat250.jpa.assignment2.dto.PutPollDto;
 
 import javax.persistence.EntityManager;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -65,8 +66,10 @@ public class PollController {
             Question q = new QuestionDAO(em).findOne(Qid);
             AnswerDto answerDto = gson.fromJson(req.body(), AnswerDto.class);
             Answer answer = new Answer(answerDto, q);
+            q.getAnswers().add(answer);
+            new QuestionDAO(em).update(q);
             new AnswerDAO(em).create(answer);
-            return gson.toJson(answerDto);
+            return gson.toJson(new AnswerDAO(em).findOne(answer.getId()));
         });
 
     }
