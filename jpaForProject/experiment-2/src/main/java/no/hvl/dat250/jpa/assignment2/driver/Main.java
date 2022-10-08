@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static final String PERSISTENCE_UNIT_NAME = "mercuryPollDb";
@@ -55,11 +57,13 @@ public class Main {
         tx.commit();
 
         EndUser endUser1 = new EndUser();
+        endUser1.setUserName("Testlol");
         EndUserDAO endUserDAO = new EndUserDAO(em);
-        tx.begin();
-        endUserDAO.create(endUser1);
-        tx.commit();
 
+        endUserDAO.create(endUser1);
+
+        List<EndUser> endusers = endUserDAO.findAll();
+        System.out.println(endusers);
         em.close();
         factory.close();
 
