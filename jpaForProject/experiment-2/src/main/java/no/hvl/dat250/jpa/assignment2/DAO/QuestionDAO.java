@@ -9,4 +9,14 @@ public class QuestionDAO extends DAO<Question>{
         super.entityManager = manager;
         setClazz(Question.class );
     }
+
+    public void delete(Question entity) {
+        EntityTransaction tx = entityManager.getTransaction();
+        tx.begin();
+        for (Answer a : entity.getAnswers) {
+            entityManager.remove(a);
+        }
+        entityManager.remove(entity);
+        tx.commit();
+    }
 }

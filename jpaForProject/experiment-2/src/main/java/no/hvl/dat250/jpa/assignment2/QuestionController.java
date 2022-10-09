@@ -34,10 +34,17 @@ public class QuestionController {
             return gson.toJson(new PollDto(poll));
         });
         put("/question/:id", (req, res) -> {
-           return "";
+            Long id = Long.parseLong(req.params("id"));
+            Question q = new QuestionDAO(em).findOne(id);
+            PutQuestionDto dto = gson.fromJson(req.body(), PutQuestionDto.class);
+            question.setQuestion(dto.getQuestion());
+            new questionDAO(em).update(question);
+            return "\uD83C\uDF1A";
         });
         delete("/question/:id", (req, res) -> {
-            return "";
+            Long id = Long.parseLong(req.params("id"));
+            new QuestionDAO(em).deleteById(id);
+            return "\uD83D\uDE29";
         });
 
     }
