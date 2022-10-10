@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import no.hvl.dat250.jpa.assignment2.DAO.PollDAO;
 import no.hvl.dat250.jpa.assignment2.DAO.QuestionDAO;
 import no.hvl.dat250.jpa.assignment2.dto.PollDto;
+import no.hvl.dat250.jpa.assignment2.dto.PutQuestionDto;
 import no.hvl.dat250.jpa.assignment2.dto.QuestionDto;
 
 import javax.persistence.EntityManager;
@@ -37,8 +38,8 @@ public class QuestionController {
             Long id = Long.parseLong(req.params("id"));
             Question q = new QuestionDAO(em).findOne(id);
             PutQuestionDto dto = gson.fromJson(req.body(), PutQuestionDto.class);
-            question.setQuestion(dto.getQuestion());
-            new questionDAO(em).update(question);
+            q.setQuestion(dto.getQuestion());
+            new QuestionDAO(em).update(q);
             return "\uD83C\uDF1A";
         });
         delete("/question/:id", (req, res) -> {

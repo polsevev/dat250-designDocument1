@@ -18,6 +18,5 @@ public class Main {
 
         PollController.registerRoutes(em);
         QuestionController.registerRoutes(em);
-        em.close();
     }
 }
