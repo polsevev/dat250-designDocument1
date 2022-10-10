@@ -1,5 +1,7 @@
 package no.hvl.dat250.jpa.assignment2.dto;
 
+import no.hvl.dat250.jpa.assignment2.Answer;
+
 public class AnswerDto {
 
     private Long id;
@@ -10,6 +12,10 @@ public class AnswerDto {
     public AnswerDto(Long id, boolean answer) {
         this.id = id;
         this.answer = answer;
+    }
+    public AnswerDto(Answer answer) {
+        this.answer = answer.getAnswer();
+        this.id = answer.getId();
     }
 
 

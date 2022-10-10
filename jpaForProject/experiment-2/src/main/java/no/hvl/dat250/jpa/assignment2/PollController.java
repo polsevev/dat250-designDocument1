@@ -11,6 +11,7 @@ import no.hvl.dat250.jpa.assignment2.dto.PutPollDto;
 import javax.persistence.EntityManager;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -69,7 +70,14 @@ public class PollController {
             q.getAnswers().add(answer);
             new QuestionDAO(em).update(q);
             new AnswerDAO(em).create(answer);
-            return gson.toJson(new AnswerDAO(em).findOne(answer.getId()));
+            return gson.toJson(answerDto);
+        });
+        get("/question/:id/answer", (req, res) -> {
+            Long id = Long.parseLong(req.params("id"));
+            Question question = new QuestionDAO(em).findOne(id);
+            Collection<Answer> answers = question.getAnswers();
+            Collection<AnswerDto> dto = answers.stream().map(AnswerDto::new).collect(Collectors.toList());
+            return gson.toJson(dto);
         });
 
     }
